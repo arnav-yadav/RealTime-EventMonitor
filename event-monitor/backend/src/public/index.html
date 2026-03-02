@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Monitor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <div class="logo">⚡</div>
+            <div>
+                <h1>Event Monitor</h1>
+                <p class="subtitle">Real-time event stream</p>
+            </div>
+        </div>
+        <div class="connection-status" id="status">
+            <span class="dot"></span>
+            <span id="status-text">Connecting...</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- Counters Row -->
+        <section class="counters" id="counters">
+            <div class="counter-card" data-type="ERROR">
+                <div class="counter-icon">🔴</div>
+                <div class="counter-value" id="count-ERROR">0</div>
+                <div class="counter-label">Errors</div>
+            </div>
+            <div class="counter-card" data-type="LOGIN">
+                <div class="counter-icon">🟢</div>
+                <div class="counter-value" id="count-LOGIN">0</div>
+                <div class="counter-label">Logins</div>
+            </div>
+            <div class="counter-card" data-type="PAYMENT">
+                <div class="counter-icon">🟡</div>
+                <div class="counter-value" id="count-PAYMENT">0</div>
+                <div class="counter-label">Payments</div>
+            </div>
+            <div class="counter-card" data-type="LOCATION">
+                <div class="counter-icon">🔵</div>
+                <div class="counter-value" id="count-LOCATION">0</div>
+                <div class="counter-label">Locations</div>
+            </div>
+        </section>
+
+        <!-- Main Content: Feed + Ranking -->
+        <div class="content">
+            <!-- Event Feed -->
+            <section class="feed">
+                <div class="section-header">
+                    <h2>Live Feed</h2>
+                    <span class="badge" id="event-count">0 events</span>
+                </div>
+                <div class="feed-list" id="feed"></div>
+            </section>
+
+            <!-- Ranking Sidebar -->
+            <aside class="ranking">
+                <div class="section-header">
+                    <h2>All-Time Ranking</h2>
+                </div>
+                <div class="ranking-list" id="ranking"></div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

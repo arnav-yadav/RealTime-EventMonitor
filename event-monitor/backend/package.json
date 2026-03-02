@@ -1,0 +1,29 @@
+{
+  "name": "event-monitor-backend",
+  "version": "1.0.0",
+  "description": "Real-Time Event Monitoring & Alert System - Backend",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "produce": "node src/kafka/producer.js",
+    "produce:load": "EVENTS_PER_SEC=84 node src/kafka/producer.js",
+    "consume": "node src/kafka/consumer.js"
+  },
+  "keywords": [
+    "kafka",
+    "redis",
+    "websocket",
+    "sse",
+    "event-driven"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "ioredis": "^5.10.0",
+    "kafkajs": "^2.2.4",
+    "pg": "^8.19.0",
+    "ws": "^8.19.0"
+  }
+}
